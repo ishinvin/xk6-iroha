@@ -56,12 +56,16 @@ jobs:
         id: package
         run: |
           name="xk6-iroha-${{ github.ref_name }}-${{ matrix.goos }}-${{ matrix.goarch }}"
+          mkdir -p xk6-iroha/types
+          cp types/xk6-iroha.d.ts xk6-iroha/types/
           if [ "${{ matrix.goos }}" = "windows" ]; then
             asset="$name.zip"
-            zip "$asset" k6-iroha.exe types/xk6-iroha.d.ts
+            cp k6-iroha.exe xk6-iroha/
+            zip -r "$asset" xk6-iroha
           else
             asset="$name.tar.gz"
-            tar -czf "$asset" k6-iroha types/xk6-iroha.d.ts
+            cp k6-iroha xk6-iroha/
+            tar -czf "$asset" xk6-iroha
           fi
           echo "asset=$asset" >> "$GITHUB_OUTPUT"
 

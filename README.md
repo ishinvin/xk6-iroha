@@ -66,9 +66,9 @@ alongside `transfers.go`/`grants.go` if their signatures change.
 
 Release archives (see Install below) bundle this file alongside the
 `k6-iroha` binary, so it's still available even without cloning this
-repo — copy `types/xk6-iroha.d.ts` out of the downloaded archive into
-wherever your editor is already looking (e.g. next to your k6 scripts)
-to get the same IntelliSense.
+repo — copy `xk6-iroha/types/xk6-iroha.d.ts` out of the downloaded
+archive into wherever your editor is already looking (e.g. next to your
+k6 scripts) to get the same IntelliSense.
 
 ## Install
 
@@ -82,7 +82,7 @@ Download and install one locally:
 ```
 curl -LO https://github.com/ishinvin/xk6-iroha/releases/download/<tag>/xk6-iroha-<tag>-<os>-<arch>.tar.gz
 tar -xzf xk6-iroha-<tag>-<os>-<arch>.tar.gz
-sudo mv k6-iroha /usr/local/bin/
+sudo mv xk6-iroha/k6-iroha /usr/local/bin/
 ```
 
 > **macOS:** the binary is quarantined on first download, so Gatekeeper will
