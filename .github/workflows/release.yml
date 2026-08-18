@@ -50,7 +50,7 @@ jobs:
           out=k6-iroha
           [ "$GOOS" = "windows" ] && out=k6-iroha.exe
           k6_version=$(go list -m -f '{{.Version}}' go.k6.io/k6/v2)
-          xk6 build "$k6_version" --with github.com/ishinvin/xk6-iroha=. --output "$out"
+          xk6 build "$k6_version" --with github.com/ishinvin/xk6-iroha@${{ github.ref_name }} --output "$out"
 
       - name: Package
         id: package
