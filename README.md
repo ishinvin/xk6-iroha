@@ -70,7 +70,17 @@ tar -xzf xk6-iroha-<tag>-<os>-<arch>.tar.gz
 sudo mv k6-iroha /usr/local/bin/
 ```
 
-Or build one yourself and drop it on your `PATH`:
+> **macOS:** the binary is quarantined on first download, so Gatekeeper will
+> refuse to run it. Clear the flag once and you're set:
+> `xattr -d com.apple.quarantine /usr/local/bin/k6-iroha`
+
+Or build it yourself, either via [xk6](https://github.com/grafana/xk6):
+
+```
+xk6 build --with github.com/ishinvin/xk6-iroha@latest
+```
+
+or from a clone of this repo:
 
 ```
 make build                          # -> bin/k6-iroha
