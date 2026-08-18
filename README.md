@@ -55,6 +55,21 @@ export default function () {
 }
 ```
 
+## Editor types
+
+`types/xk6-iroha.d.ts` declares `k6/x/iroha`'s three exports for
+TypeScript-aware editors (VS Code's JS IntelliSense picks up ambient
+`.d.ts` files automatically when this repo is visible in the same
+window as the k6 scripts importing it — no build step or package.json
+involved). It's hand-maintained, not generated, so update it by hand
+alongside `transfers.go`/`grants.go` if their signatures change.
+
+Release archives (see Install below) bundle this file alongside the
+`k6-iroha` binary, so it's still available even without cloning this
+repo — copy `types/xk6-iroha.d.ts` out of the downloaded archive into
+wherever your editor is already looking (e.g. next to your k6 scripts)
+to get the same IntelliSense.
+
 ## Install
 
 Prebuilt `k6-iroha` binaries (a k6 build with this extension linked in) are

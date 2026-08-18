@@ -58,10 +58,10 @@ jobs:
           name="xk6-iroha-${{ github.ref_name }}-${{ matrix.goos }}-${{ matrix.goarch }}"
           if [ "${{ matrix.goos }}" = "windows" ]; then
             asset="$name.zip"
-            zip "$asset" k6-iroha.exe
+            zip "$asset" k6-iroha.exe types/xk6-iroha.d.ts
           else
             asset="$name.tar.gz"
-            tar -czf "$asset" k6-iroha
+            tar -czf "$asset" k6-iroha types/xk6-iroha.d.ts
           fi
           echo "asset=$asset" >> "$GITHUB_OUTPUT"
 
