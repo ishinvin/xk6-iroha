@@ -1,0 +1,26 @@
+{
+  "name": "xk6-iroha-types",
+  "version": "1.0.0",
+  "description": "Ambient TypeScript declarations for xk6-iroha's k6/x/iroha module — editor-only IntelliSense.",
+  "types": "xk6-iroha.d.ts",
+  "files": [
+    "xk6-iroha.d.ts"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "k6",
+    "xk6",
+    "typescript",
+    "types",
+    "iroha"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishinvin/xk6-iroha.git",
+    "directory": "types"
+  },
+  "homepage": "https://github.com/ishinvin/xk6-iroha#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

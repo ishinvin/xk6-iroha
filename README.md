@@ -70,6 +70,9 @@ repo — copy `xk6-iroha/types/xk6-iroha.d.ts` out of the downloaded
 archive into wherever your editor is already looking (e.g. next to your
 k6 scripts) to get the same IntelliSense.
 
+It's also published as [`xk6-iroha-types`](https://www.npmjs.com/package/xk6-iroha-types)
+on npm — see [`types/README.md`](types/README.md) for install/usage.
+
 ## Install
 
 Prebuilt `k6-iroha` binaries (a k6 build with this extension linked in) are

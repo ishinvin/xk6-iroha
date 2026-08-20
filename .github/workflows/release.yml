@@ -73,3 +73,28 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: ${{ steps.package.outputs.asset }}
+
+  publish-npm:
+    name: Publish npm package
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Set package version from tag
+        working-directory: types
+        run: npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version
+
+      - name: Publish package on NPM
+        working-directory: types
+        run: npm publish
